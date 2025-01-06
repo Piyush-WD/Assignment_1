@@ -6,7 +6,8 @@ int isPowerOfTwo(int n) {
     return !(n & (n - 1)); 
 }
 int main() {
-    int num = 16;
+    int num;
+    scanf("%d",&num);
     if (isPowerOfTwo(num)) {
         printf("%d is a power of two\n", num);
     } else {
