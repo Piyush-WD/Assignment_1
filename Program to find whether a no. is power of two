@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int isPowerOfTwo(int n) {
+    // If n is 0, it's not a power of two
+    if (n == 0) {
+        return 0;
+    }
+
+    // If n is a power of two, it will have only one bit set
+    return !(n & (n - 1)); 
+}
+
+int main() {
+    int num = 16;
+
+    if (isPowerOfTwo(num)) {
+        printf("%d is a power of two\n", num);
+    } else {
+        printf("%d is not a power of two\n", num);
+    }
+
+    return 0;
+}
