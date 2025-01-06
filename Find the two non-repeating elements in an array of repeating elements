@@ -1,18 +1,12 @@
 #include <stdio.h>
-
 void findTwoNonRepeating(int arr[], int n) {
     int xor = 0; 
     for (int i = 0; i < n; i++) {
         xor ^= arr[i]; 
     }
-
-    // Get the rightmost set bit of XOR
     int rightmostSetBit = xor & ~(xor - 1); 
-
     int x = 0; 
     int y = 0; 
-
-    // Divide elements of arr into two sets based on the rightmost set bit
     for (int i = 0; i < n; i++) {
         if (arr[i] & rightmostSetBit) {
             x ^= arr[i]; 
@@ -20,6 +14,11 @@ void findTwoNonRepeating(int arr[], int n) {
             y ^= arr[i]; 
         }
     }
-
     printf("The two non-repeating elements are %d and %d\n", x, y);
+}
+int main() {
+    int arr[] = {2, 3, 7, 9, 11, 2, 3, 11};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    findTwoNonRepeating(arr, n);
+    return 0;
 }
