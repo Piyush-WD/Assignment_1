@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int findPosition(int n) {
+    if (n == 0) {
+        return -1; 
+    }
+    int pos = 0;
+    while (!(n & 1)) {
+        n >>= 1;
+        pos++;
+    }
+    return pos + 1;
+}
+int main() {
+    int num;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    int position = findPosition(num);
+    if (position != -1) {
+        printf("Position of the only set bit: %d\n", position);
+    } else {
+        printf("The integer has either no set bits or multiple set bits.\n");
+    }
+    return 0;
+}
