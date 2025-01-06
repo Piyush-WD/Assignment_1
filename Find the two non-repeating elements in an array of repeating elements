@@ -16,9 +16,3 @@ void findTwoNonRepeating(int arr[], int n) {
     }
     printf("The two non-repeating elements are %d and %d\n", x, y);
 }
-int main() {
-    int arr[] = {2, 3, 7, 9, 11, 2, 3, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    findTwoNonRepeating(arr, n);
-    return 0;
-}
